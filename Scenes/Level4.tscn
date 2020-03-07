@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Resources/light_tiles.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/Candle.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/LevelManager.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Exit.tscn" type="PackedScene" id=5]
+
+[node name="Level4" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="LightMap" type="TileMap" parent="." groups=[
+"Map",
+]]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 65540, 0, 65536, 65541, 0, 65536, 65542, 0, 65536, 65543, 0, 65536, 65544, 0, 65536, 65545, 0, 65536, 65546, 0, 65536, 65547, 0, 65536, 65548, 0, 65536, 65549, 0, 65536, 65550, 0, 65536, 65551, 0, 65536, 65552, 0, 65536, 65553, 0, 65536, 65554, 0, 65536, 65555, 0, 65536, 131076, 0, 65536, 131078, 0, 65536, 131091, 0, 65536, 196612, 0, 65536, 196614, 0, 65536, 196615, 0, 65536, 196616, 0, 65536, 196617, 0, 65536, 196618, 0, 65536, 196619, 0, 65536, 196620, 0, 65536, 196621, 0, 65536, 196622, 0, 65536, 196623, 0, 65536, 196624, 0, 65536, 196625, 0, 65536, 196627, 0, 65536, 262148, 0, 65536, 262150, 0, 65536, 262161, 0, 65536, 262163, 0, 65536, 327684, 0, 65536, 327686, 0, 65536, 327697, 0, 65536, 327699, 0, 65536, 393220, 0, 65536, 393222, 0, 65536, 393233, 0, 65536, 393235, 0, 65536, 458756, 0, 65536, 458758, 0, 65536, 458769, 0, 65536, 458771, 0, 65536, 524292, 0, 65536, 524294, 0, 65536, 524305, 0, 65536, 524307, 0, 65536, 589828, 0, 65536, 589830, 0, 65536, 589841, 0, 65536, 589843, 0, 65536, 655364, 0, 65536, 655366, 0, 65536, 655377, 0, 65536, 655379, 0, 65536, 720900, 0, 65536, 720902, 0, 65536, 720913, 0, 65536, 720915, 0, 65536, 786436, 0, 65536, 786438, 0, 65536, 786439, 0, 65536, 786440, 0, 65536, 786441, 0, 65536, 786442, 0, 65536, 786443, 0, 65536, 786444, 0, 65536, 786445, 0, 65536, 786446, 0, 65536, 786447, 0, 65536, 786448, 0, 65536, 786449, 0, 65536, 786451, 0, 65536, 851972, 0, 65536, 851985, 0, 65536, 851987, 0, 65536, 917508, 0, 65536, 917509, 0, 65536, 917510, 0, 65536, 917511, 0, 65536, 917512, 0, 65536, 917513, 0, 65536, 917514, 0, 65536, 917515, 0, 65536, 917516, 0, 65536, 917517, 0, 65536, 917518, 0, 65536, 917519, 0, 65536, 917520, 0, 65536, 917521, 0, 65536, 917522, 0, 65536, 917523, 0, 65536 )
+
+[node name="DarkMap" type="TileMap" parent="." groups=[
+"Map",
+]]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 65540, 1, 65536, 65541, 1, 65536, 65542, 1, 65536, 65543, 1, 65536, 65544, 1, 65536, 65545, 1, 65536, 65546, 1, 65536, 65547, 1, 131075, 65548, 1, 65536, 65549, 1, 65536, 65550, 1, 65536, 65551, 1, 65536, 65552, 1, 65536, 65553, 1, 65536, 65554, 1, 65536, 65555, 1, 65536, 131076, 1, 65536, 131080, 1, 65536, 131087, 1, 65536, 131091, 1, 65536, 196612, 1, 65536, 196616, 1, 65536, 196623, 1, 65536, 196627, 1, 65536, 262148, 1, 65536, 262152, 1, 65536, 262159, 1, 65536, 262163, 1, 65536, 327684, 1, 65536, 327688, 1, 65536, 327695, 1, 65536, 327699, 1, 65536, 393220, 1, 65536, 393224, 1, 65536, 393231, 1, 65536, 393235, 1, 65536, 458756, 1, 65536, 458757, 1, 65536, 458758, 1, 65536, 458759, 1, 65536, 458760, 1, 65536, 458761, 1, 65536, 458762, 1, 65536, 458763, 1, 65536, 458764, 1, 65536, 458765, 1, 65536, 458766, 1, 65536, 458767, 1, 65536, 458771, 1, 65536, 524292, 1, 65536, 524296, 1, 65536, 524307, 1, 65536, 589828, 1, 65536, 589832, 1, 65536, 589843, 1, 65536, 655364, 1, 65536, 655368, 1, 65536, 655379, 1, 65536, 720900, 1, 65536, 720904, 1, 65536, 720915, 1, 65536, 786436, 1, 65536, 786440, 1, 65536, 786451, 1, 65536, 851972, 1, 65536, 851976, 1, 65536, 851987, 1, 65536, 917508, 1, 65536, 917509, 1, 65536, 917510, 1, 65536, 917511, 1, 65536, 917512, 1, 65536, 917513, 1, 65536, 917514, 1, 65536, 917515, 1, 65536, 917516, 1, 65536, 917517, 1, 65536, 917518, 1, 65536, 917519, 1, 65536, 917520, 1, 65536, 917521, 1, 65536, 917522, 1, 65536, 917523, 1, 65536 )
+
+[node name="Candle" parent="." groups=[
+"Candle",
+] instance=ExtResource( 2 )]
+position = Vector2( 216, 72 )
+is_on = false
+
+[node name="Candle2" parent="." groups=[
+"Candle",
+] instance=ExtResource( 2 )]
+position = Vector2( 160, 168 )
+is_on = false
+
+[node name="Candle3" parent="." groups=[
+"Candle",
+] instance=ExtResource( 2 )]
+position = Vector2( 264, 216 )
+
+[node name="Candle4" parent="." groups=[
+"Candle",
+] instance=ExtResource( 2 )]
+position = Vector2( 88, 40 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 88, 216 )
+
+[node name="Exit" parent="." instance=ExtResource( 5 )]
+position = Vector2( 184, 24 )
+[connection signal="world_switched" from="." to="Candle" method="_on_world_switched"]
+[connection signal="world_switched" from="." to="Candle2" method="_on_world_switched"]
+[connection signal="world_switched" from="." to="Candle3" method="_on_world_switched"]
+[connection signal="world_switched" from="." to="Candle4" method="_on_world_switched"]
+[connection signal="world_switched" from="." to="Player" method="_on_world_switched"]
+[connection signal="candle_turned" from="Candle" to="." method="_on_candle_turned"]
+[connection signal="candle_turned" from="Candle2" to="." method="_on_candle_turned"]
+[connection signal="candle_turned" from="Candle3" to="." method="_on_candle_turned"]
+[connection signal="candle_turned" from="Candle4" to="." method="_on_candle_turned"]

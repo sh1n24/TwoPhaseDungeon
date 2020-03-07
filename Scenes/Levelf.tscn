@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Resources/light_tiles.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/Candle.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/LevelManager.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Exit.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Resources/font.tres" type="DynamicFont" id=6]
+
+[node name="Level0" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="LightMap" type="TileMap" parent="." groups=[
+"Map",
+]]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 589840, 0, 131075 )
+
+[node name="DarkMap" type="TileMap" parent="." groups=[
+"Map",
+]]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
+[node name="Candle" parent="." groups=[
+"Candle",
+] instance=ExtResource( 2 )]
+position = Vector2( 208, 152 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 152, 152 )
+
+[node name="Exit" parent="." instance=ExtResource( 5 )]
+position = Vector2( 264, 152 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 88.0
+margin_top = 64.0
+margin_right = 303.0
+margin_bottom = 88.0
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "You made it! Thanks for playing"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="world_switched" from="." to="Candle" method="_on_world_switched"]
+[connection signal="world_switched" from="." to="Player" method="_on_world_switched"]
+[connection signal="candle_turned" from="Candle" to="." method="_on_candle_turned"]

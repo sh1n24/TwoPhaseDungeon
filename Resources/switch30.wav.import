@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/switch30.wav-dbcf077dfbab12b7cd9571e7d668802b.sample"
+
+[deps]
+
+source_file="res://Resources/switch30.wav"
+dest_files=[ "res://.import/switch30.wav-dbcf077dfbab12b7cd9571e7d668802b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

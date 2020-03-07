@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/phaserUp3.wav-7841192bce6669b63d1c5685c344eea5.sample"
+
+[deps]
+
+source_file="res://Resources/phaserUp3.wav"
+dest_files=[ "res://.import/phaserUp3.wav-7841192bce6669b63d1c5685c344eea5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Resources/light_tiles.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/Candle.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/LevelManager.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Exit.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Resources/font.tres" type="DynamicFont" id=6]
+
+[node name="Level2" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="LightMap" type="TileMap" parent="." groups=[
+"Map",
+]]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 262149, 0, 65536, 262150, 0, 65536, 262151, 0, 65536, 262152, 0, 65536, 262153, 0, 65536, 262154, 0, 65536, 262155, 0, 65536, 262156, 0, 65536, 262157, 0, 65536, 262158, 0, 65536, 262159, 0, 65536, 262160, 0, 65536, 262161, 0, 65536, 262162, 0, 65536, 327685, 0, 65536, 327691, 0, 65538, 327698, 0, 65536, 393221, 0, 65536, 393227, 0, 65538, 393234, 0, 65536, 458757, 0, 65536, 458763, 0, 65538, 458770, 0, 65536, 524293, 0, 65536, 524299, 0, 65538, 524306, 0, 65538, 589829, 0, 65536, 589835, 0, 65538, 589842, 0, 65536, 655365, 0, 65536, 655371, 0, 65538, 655378, 0, 65536, 720901, 0, 65536, 720907, 0, 65538, 720914, 0, 65536, 786437, 0, 65536, 786438, 0, 65536, 786439, 0, 65536, 786440, 0, 65536, 786441, 0, 65536, 786442, 0, 65536, 786443, 0, 65536, 786444, 0, 65536, 786445, 0, 65536, 786446, 0, 65536, 786447, 0, 65536, 786448, 0, 65536, 786449, 0, 65536, 786450, 0, 65536 )
+
+[node name="DarkMap" type="TileMap" parent="." groups=[
+"Map",
+]]
+visible = false
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 262149, 1, 65536, 262150, 1, 65536, 262151, 1, 65536, 262152, 1, 65536, 262153, 1, 65536, 262154, 1, 65536, 262155, 1, 65536, 262156, 1, 65536, 262157, 1, 65536, 262158, 1, 65536, 262159, 1, 65536, 262160, 1, 65536, 262161, 1, 65536, 262162, 1, 65536, 327685, 1, 65536, 327698, 1, 65536, 393221, 1, 65536, 393234, 1, 65536, 458757, 1, 65536, 458770, 1, 65536, 524293, 1, 65536, 524306, 1, 131075, 589829, 1, 65536, 589842, 1, 65536, 655365, 1, 65536, 655378, 1, 65536, 720901, 1, 65536, 720914, 1, 65536, 786437, 1, 65536, 786438, 1, 65536, 786439, 1, 65536, 786440, 1, 65536, 786441, 1, 65536, 786442, 1, 65536, 786443, 1, 65536, 786444, 1, 65536, 786445, 1, 65536, 786446, 1, 65536, 786447, 1, 65536, 786448, 1, 65536, 786449, 1, 65536, 786450, 1, 65536 )
+
+[node name="Candle" parent="." groups=[
+"Candle",
+] instance=ExtResource( 2 )]
+position = Vector2( 168, 88 )
+
+[node name="Candle2" parent="." groups=[
+"Candle",
+] instance=ExtResource( 2 )]
+position = Vector2( 200, 184 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 104, 136 )
+
+[node name="Exit" parent="." instance=ExtResource( 5 )]
+position = Vector2( 296, 136 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 32.0
+margin_top = 40.0
+margin_right = 192.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 200, 32 )
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "turn off all the lights to dive into the dark"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 112.0
+margin_top = 208.0
+margin_right = 272.0
+margin_bottom = 232.0
+rect_pivot_offset = Vector2( 200, 32 )
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "These walls cannot stop your spell"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="world_switched" from="." to="Candle" method="_on_world_switched"]
+[connection signal="world_switched" from="." to="Player" method="_on_world_switched"]
+[connection signal="world_switched" from="." to="Candle2" method="_on_world_switched"]
+[connection signal="candle_turned" from="Candle" to="." method="_on_candle_turned"]
+[connection signal="candle_turned" from="Candle2" to="." method="_on_candle_turned"]
